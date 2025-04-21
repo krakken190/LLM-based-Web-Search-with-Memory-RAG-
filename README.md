@@ -79,3 +79,5 @@ Wait for the answer and the sources.
 Enter follow-up questions in the same box — the chat history will be preserved.
 
 Check chat_history/user_1.json for the conversation logs.
+
+Also you can clear the chat, which will remove chat_history too
