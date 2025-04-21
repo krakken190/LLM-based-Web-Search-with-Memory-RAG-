@@ -2,6 +2,8 @@
 
 This project implements a **Retrieval-Augmented Generation (RAG)** system with a **Streamlit frontend** and a **Flask backend**. It uses **Serper.dev** for web search and **OpenAI's GPT** models (via LangChain) to generate responses based on real-time web content.
 
+https://github.com/user-attachments/assets/4ae04087-ad7e-4d0d-874a-ca8bd80680c1
+
 ---
 
 ## ✨ Features
