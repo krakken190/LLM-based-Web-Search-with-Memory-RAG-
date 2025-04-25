@@ -1,4 +1,5 @@
-# 🔍 LLM-based Web Search with Memory (RAG)  you can also check simple streamlit version of this, without flask here: https://github.com/krakken190/Web-Search-with-Memory-RAG-and-LLM
+# 🔍 LLM-based Web Search with Memory (RAG)  
+### you can also check simple streamlit version of this, without flask here: https://github.com/krakken190/Web-Search-with-Memory-RAG-and-LLM
 
 This project implements a **Retrieval-Augmented Generation (RAG)** system with a **Streamlit frontend** and a **Flask backend**. It uses **Serper.dev** for web search and **OpenAI's GPT** models (via LangChain) to generate responses based on real-time web content.
 
