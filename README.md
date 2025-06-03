@@ -7,6 +7,8 @@ https://github.com/user-attachments/assets/4ae04087-ad7e-4d0d-874a-ca8bd80680c1
 
 ---
 
+![RAG flowchat](https://github.com/user-attachments/assets/1cf76875-f0a3-4313-a965-92e2d2ad662a)
+
 ## ✨ Features
 
 - ✅ Search the web using the Serper.dev API.
