@@ -8,80 +8,81 @@ https://github.com/user-attachments/assets/4ae04087-ad7e-4d0d-874a-ca8bd80680c1
 
 ![RAG flowchat](https://github.com/user-attachments/assets/1cf76875-f0a3-4313-a965-92e2d2ad662a)
 
-## ✨ Features
+# 🚀 LLM-Powered Web Search with RAG and Memory
 
-- ✅ Search the web using the Serper.dev API.
-- ✅ Scrape and extract meaningful content from the top 2 search results.
-- ✅ Generate context-aware answers using OpenAI’s GPT model.
-- ✅ **Supports follow-up questions** with memory (like ChatGPT).
-- ✅ Displays sources for every answer.
-- ✅ Stores chat history per user in a folder (`chat_history/`).
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
+[![Flask](https://img.shields.io/badge/Flask-2.0-black?logo=flask)](https://flask.palletsprojects.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.25-ff4b4b?logo=streamlit)](https://streamlit.io/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-4cbfaf?logo=openai)](https://openai.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+This project is a sophisticated **Retrieval-Augmented Generation (RAG)** system that combines real-time web search with the conversational power of Large Language Models. It features a modern **Streamlit** frontend and a robust **Flask** backend, providing users with accurate, context-aware answers complete with source citations.
+
+<br>
+
+https://github.com/user-attachments/assets/4ae04087-ad7e-4d0d-874a-ca8bd80680c1
+
+---
+
+### Table of Contents
+* [About The Project](#about-the-project)
+* [How It Works](#how-it-works)
+* [Key Features](#-key-features)
+* [Tech Stack](#-tech-stack)
+* [Folder Structure](#-folder-structure)
+* [Getting Started](#-getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#-usage)
+* [Contributing](#-contributing)
+* [License](#-license)
 
 ---
 
-## Memory + Follow-Up Support
+## About The Project
 
-- It uses **LangChain’s `ConversationBufferMemory`** to preserve past messages.
-- The Streamlit UI allows users to enter follow-up questions without resetting the chat.
-- Chat history is displayed in the interface and persisted to disk (`chat_history/user_1.json`).
+This application enhances traditional LLM capabilities by grounding them in up-to-date information from the web. Instead of relying solely on its training data, the model can perform live web searches, scrape relevant content, and synthesize an answer based on the retrieved information. The integrated memory module allows for natural, human-like follow-up conversations.
 
----
+![RAG Flowchart](https://github.com/user-attachments/assets/1cf76875-f0a3-4313-a965-92e2d2ad662a)
+
+
+## How It Works
+
+The application follows a simple yet powerful architectural pattern:
+
+1.  **Frontend Interaction**: The user enters a query into the Streamlit interface.
+2.  **Backend Request**: Streamlit sends the query and chat history to the Flask API.
+3.  **Web Search**: The Flask backend uses the **Serper.dev API** to perform a real-time web search.
+4.  **Content Scraping**: The system scrapes the top search results for relevant content using **BeautifulSoup**.
+5.  **RAG Generation**: The scraped text, user query, and conversation history are passed to an **OpenAI GPT model** via **LangChain**.
+6.  **Memory**: **`ConversationBufferMemory`** from LangChain is used to retain context for follow-up questions.
+7.  **Response**: The generated answer and its sources are sent back to the Streamlit UI and displayed.
+
+
+## ✨ Key Features
+
+-   **Live Web Search**: Integrates with Serper.dev for real-time information retrieval.
+-   **Retrieval-Augmented Generation**: Scrapes web content to provide answers based on current data.
+-   **Conversational Memory**: Supports seamless follow-up questions using chat history.
+-   **Source Citations**: Displays the URLs from which information was extracted, ensuring transparency.
+-   **Persistent Chat History**: Saves conversation logs for each user session.
+-   **Clean, Decoupled Architecture**: Separate Flask backend for logic and Streamlit frontend for UI.
+
+
+## 💻 Tech Stack
+
+This project is built with a modern, scalable tech stack:
+
+-   **Backend**: Flask
+-   **Frontend**: Streamlit
+-   **LLM Integration**: LangChain, LangChain-OpenAI
+-   **Web Scraping**: BeautifulSoup4
+-   **API Communication**: Requests
+-   **Environment Management**: python-dotenv
+
 
 ## 📁 Folder Structure
-project-root/
 
-├── app.py             # Flask backend
+The project is organized with a clear separation of concerns between the frontend and backend services.
 
-├── utils.py           # Search, scraping, and answer generation logic
 
-├── streamlit_app.py   # Frontend Streamlit app
-
-├── .env               # API keys for Serper and OpenAI
-
-├── chat_history/      # Stores user chat logs
-
-└── requirements.txt   # All dependencies
-
----
-
-## 🔧 Setup Instructions
-
-### 1. Clone the repository
-
-```
-git clone [https://github.com/your-username/rag-search-app.git](https://github.com/your-username/rag-search-app.git)
-cd rag-search-app
-```
-
-### 2. Install dependencies
-```
-pip install -r requirements.txt
-```
-
-### 3. Add .env file
-```
-SERPER_API_KEY=your_serper_api_key
-OPENAI_API_KEY=your_openai_api_key
-```
-
-### 4. Run the Flask backend
-```
-python app.py
-```
-
-### 5. Run the Streamlit frontend
-```
-streamlit run streamlit_app.py
-```
-
-📋 Usage
-
-Enter your first query in the input box.
-
-Wait for the answer and the sources.
-
-Enter follow-up questions in the same box — the chat history will be preserved.
-
-Check chat_history/user_1.json for the conversation logs.
-
-Also you can clear the chat, which will remove chat_history too
