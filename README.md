@@ -75,4 +75,85 @@ This project is built with a modern, scalable tech stack:
 
 The project is organized with a clear separation of concerns between the frontend and backend services.
 
+```
+LLM-based-Web-Search-with-Memory-RAG-/
+├── flask_app/
+│ ├── app.py # Flask API endpoints
+│ └── utils.py # Core logic for search, scraping, and generation
+│
+├── streamlit_app/
+│ ├── app.py # Streamlit user interface
+│ └── chat_history/ # Stores user conversation logs (e.g., user_1.json)
+│
+├── requirements.txt # Project dependencies
+└── README.md # You are here!
+```
 
+
+## 🔧 Getting Started
+
+Follow these instructions to get a local copy up and running.
+
+### Prerequisites
+
+Make sure you have Python 3.9+ installed on your system.
+
+### Installation
+
+1.  **Clone the repository:**
+    ```
+    git clone https://github.com/krakken190/LLM-based-Web-Search-with-Memory-RAG-.git
+    cd LLM-based-Web-Search-with-Memory-RAG-
+    ```
+
+2.  **Install dependencies:**
+    ```
+    pip install -r requirements.txt
+    ```
+
+3.  **Set up environment variables:**
+    Create a `.env` file in the `flask_app` directory and add your API keys:
+    ```
+    SERPER_API_KEY="your_serper_api_key"
+    OPENAI_API_KEY="your_openai_api_key"
+    ```
+
+4.  **Run the Flask backend:**
+    Navigate to the backend directory and start the server.
+    ```
+    cd flask_app
+    python app.py
+    ```
+    The backend will be running at `http://127.0.0.1:5000`.
+
+5.  **Run the Streamlit frontend:**
+    Open a new terminal, navigate to the frontend directory, and run the app.
+    ```
+    cd streamlit_app
+    streamlit run app.py
+    ```
+    The application will be accessible at `http://localhost:8501`.
+
+
+## 📋 Usage
+
+1.  Open your browser and go to `http://localhost:8501`.
+2.  Type your first question in the input box and press Enter.
+3.  The app will display the answer along with the sources it used.
+4.  Ask a follow-up question to see the memory feature in action!
+5.  To start a new conversation, use the "Clear Chat" button.
+
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
